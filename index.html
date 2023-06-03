@@ -200,18 +200,17 @@
 
     // Console Time End
     errorBtns[14].addEventListener('click', function handleBtnClick() {
-      // try {
-      //   boom();
-      // } catch (error) {
-      //   console.log('Sadly an error happened my friend')
-      //   throw error;
-      // }
-
-      boom();
-      console.log('Sadly an error happened my friend')
+      try {
+        boom();
+      } catch (error) {
+        throw error;
+      }
     });
 
     // You may move this JS to another file if you wish
+    window.onerror = function (message, source, lineno, colno, error) {
+      console.log('Sadly an error happened my friend');
+    };
   </script>
 </body>
 
